@@ -36,6 +36,11 @@ describe('rolling window throttler', () => {
     expect(this.throttler.tryAcquire(key)).to.be.true;
   });
 
+  it('Not providing clock should work, has default clock', function(){
+    const throttler = aDefaultThrottler();
+    expect(throttler.tryAcquire(key)).to.be.true;
+  });
+
   class FakeClock{
     constructor(){
       this.currentTime = 1;
