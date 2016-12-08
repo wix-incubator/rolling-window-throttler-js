@@ -5,11 +5,15 @@ const expect = require('chai').expect,
 describe('rolling window throttler', () => {
 
   const key = '192.168.2.1';
-  const aDefaultThrottler = () => factory.get({max: 1, durationWindow: 1000});
+  const aDefaultThrottler = clock => factory.get({max: 1,
+                                               durationWindow: 1000,
+                                               clock: clock});
 
   beforeEach(function(){
-    this.throttler = aDefaultThrottler();
+    this.clock = new FakeClock();
+    this.throttler = aDefaultThrottler(this.clock);
   });
+
 
   it('Allow single request', function()  {
     expect(this.throttler.tryAcquire(key)).to.be.true;
@@ -26,7 +30,22 @@ describe('rolling window throttler', () => {
     expect(this.throttler.tryAcquire(anotherKey)).to.be.true;
   });
 
+  it('re-allow request after the rolling window', function()  {
+    this.throttler.tryAcquire(key);
+    this.clock.age(2000);
+    expect(this.throttler.tryAcquire(key)).to.be.true;
+  });
 
-
+  class FakeClock{
+    constructor(){
+      this.currentTime = 1;
+    }
+    age(ms){
+      this.currentTime = this.currentTime + ms;
+    }
+    millis(){
+      return this.currentTime;
+    }
+  }
 
 });
