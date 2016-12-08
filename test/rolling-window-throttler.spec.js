@@ -20,5 +20,13 @@ describe('rolling window throttler', () => {
     expect(this.throttler.tryAcquire(key)).to.be.false;
   });
 
+  it('Allow second request but from different key', function()  {
+    const anotherKey = '200.200.200.1';
+    expect(this.throttler.tryAcquire(key)).to.be.true;
+    expect(this.throttler.tryAcquire(anotherKey)).to.be.true;
+  });
+
+
+
 
 });
