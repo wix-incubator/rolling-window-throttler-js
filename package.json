@@ -24,6 +24,8 @@
     "registry": "http://repo.dev.wix/artifactory/api/npm/npm-local/"
   },
   "dependencies": {
+    "hashmap": "^2.0.6",
+    "parse-duration": "^0.1.1"
   },
   "devDependencies": {
     "chai": "~3.5.0",
