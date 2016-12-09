@@ -15,22 +15,22 @@ describe('rolling window throttler', () => {
   });
 
 
-  it('Allow single request', function()  {
+  it('Should allow single request', function()  {
     expect(this.throttler.tryAcquire(key)).to.be.true;
   });
 
-  it('Throttle second request', function()  {
+  it('Should throttle second request', function()  {
     this.throttler.tryAcquire(key);
     expect(this.throttler.tryAcquire(key)).to.be.false;
   });
 
-  it('Allow second request but from different key', function()  {
+  it('should allow second request but from different key', function()  {
     const anotherKey = '200.200.200.1';
     expect(this.throttler.tryAcquire(key)).to.be.true;
     expect(this.throttler.tryAcquire(anotherKey)).to.be.true;
   });
 
-  it('re-allow request after the rolling window', function()  {
+  it('should re-allow request after the rolling window', function()  {
     this.throttler.tryAcquire(key);
     this.clock.age(2000);
     expect(this.throttler.tryAcquire(key)).to.be.true;
