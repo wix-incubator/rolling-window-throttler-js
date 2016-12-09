@@ -1,4 +1,4 @@
-# rolling window throttler
+# Rolling Window Throttler
 
 ## Description
 Count invocation per key and returns boolean if invocation allowed within the rolling
