@@ -14,6 +14,6 @@ window for a given durationWindow and max invocations per key
 
    ```
 ## durationWindow
-### milliseconds usage example: durationWindow: 1000
-### verbal period usage example: durationWindow: 1m / 1s / '1hr 20mins'
+1. milliseconds usage example: {durationWindow: 1000}
+2. verbal period usage example: {durationWindow: 1m / 1s / '1hr 20mins'}
 
