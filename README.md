@@ -8,7 +8,7 @@ window for a given durationWindow and max invocations per key
 
 ```javascript
    const throttlerFactory = require('rolling-window-throttler')
-   const throttler = throttlerFactory.get(factory.get({max: 1,
+   const throttler = throttlerFactory.get({max: 1,
                                          durationWindow: 1000})
    throttler.tryAcquire("some-key") // returns boolean
 
