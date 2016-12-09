@@ -5,13 +5,13 @@ const expect = require('chai').expect,
 describe('rolling window throttler', () => {
 
   const key = '192.168.2.1';
-  const aThrottler = clock => factory.get({max: 1,
-                                               durationWindow: 1000,
+  const aThrottler = (clock, durationWindow) => factory.get({max: 1,
+                                               durationWindow: durationWindow,
                                                clock: clock});
 
   beforeEach(function(){
     this.clock = new FakeClock();
-    this.throttler = aThrottler(this.clock);
+    this.throttler = aThrottler(this.clock, 1000);
   });
 
 
@@ -35,9 +35,16 @@ describe('rolling window throttler', () => {
     this.clock.age(2000);
     expect(this.throttler.tryAcquire(key)).to.be.true;
   });
+  it('should work with verbal durationWindow and not milliseconds', function()  {
+    const throttler = aThrottler(this.clock, '1s');
+    throttler.tryAcquire(key);
+    this.clock.age(2000);
+    expect(throttler.tryAcquire(key)).to.be.true;
+  });
+
 
   it('Not providing clock should work, has default clock', function(){
-    const throttler = aThrottler();
+    const throttler = aThrottler(null, 1000);
     expect(throttler.tryAcquire(key)).to.be.true;
   });
 
