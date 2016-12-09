@@ -50,7 +50,7 @@ class FakeClock{
   age(ms){
     this.currentTime = this.currentTime + ms;
   }
-  millis(){
+  currentMillis(){
     return this.currentTime;
   }
 }
