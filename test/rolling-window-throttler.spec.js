@@ -52,7 +52,7 @@ describe('rolling window throttler', () => {
 
 class FakeClock{
   constructor(){
-    this.currentTime = new Date().getMilliseconds();
+    this.currentTime = new Date().getTime();
   }
   age(ms){
     this.currentTime = this.currentTime + ms;
