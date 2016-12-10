@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wix-private/rolling-window-throttler-js"
+    "url": "https://github.com/wix/rolling-window-throttler-js"
   },
   "bugs": {
-    "url": "https://github.com/wix-private/rolling-window-throttler-js/issues"
+    "url": "https://github.com/wix/rolling-window-throttler-js/issues"
   },
   "dependencies": {
     "hashmap": "^2.0.6",
