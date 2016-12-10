@@ -11,9 +11,9 @@ npm install --save rolling-window-throttler-js
 
 ```js
 const rollingWindowThrottler = require('rolling-window-throttler-js')
-const throttler = rollingWindowThrottler.get({max: 1, durationWindow: 1s})
+const throttler = rollingWindowThrottler.get({max: 1, durationWindow: '1s'})
 
-if (throttler.tryAcquire("some-key")) {
+if (throttler.tryAcquire('some-key')) {
   // not throttled, perform logic
 }
 ```
@@ -27,10 +27,10 @@ Parameters:
   - max - int, mandatory, number of allowed invocations for a key;
   - durationWindow - mandatory and can be one of:
     - milliseconds usage example: {durationWindow: 1000}
-    - verbal period usage example: {durationWindow: 1m / 1s / '1hr 20mins'}
+    - verbal period usage example: {durationWindow: '1m' / '1s' / '1hr 20mins'}
 
 ### RollingWindowThrottler.tryAcquire(key): boolean
-Returns true if not trottled for provided key.
+Returns true if not throttled for provided key.
 
 ## License
 Copyright (c) 2014 Wix.com Ltd. All Rights Reserved. Use of this source code is governed by a BSD-style license that can be found in the [LICENSE](LICENSE.md) file in the root of the source tree.
