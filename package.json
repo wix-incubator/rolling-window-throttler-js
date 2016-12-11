@@ -17,7 +17,6 @@
     "url": "https://github.com/wix/rolling-window-throttler-js/issues"
   },
   "dependencies": {
-    "hashmap": "^2.0.6",
     "parse-duration": "^0.1.1"
   },
   "devDependencies": {
