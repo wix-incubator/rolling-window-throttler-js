@@ -4,13 +4,13 @@ Count invocation per key and returns boolean if invocation allowed within the ro
 ## Install
 
 ```sh
-npm install --save rolling-window-throttler-js
+npm install --save rolling-window-throttler
 ```
 
 ## Usage
 
 ```js
-const rollingWindowThrottler = require('rolling-window-throttler-js')
+const rollingWindowThrottler = require('rolling-window-throttler')
 const throttler = rollingWindowThrottler.get({max: 1, durationWindow: '1s'})
 
 if (throttler.tryAcquire('some-key')) {

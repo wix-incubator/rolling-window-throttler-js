@@ -1,5 +1,5 @@
 {
-  "name": "rolling-window-throttler-js",
+  "name": "rolling-window-throttler",
   "version": "1.0.0",
   "description": "rolling window throttler for node server",
   "main": "index.js",
