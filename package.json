@@ -1,6 +1,6 @@
 {
   "name": "rolling-window-throttler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "rolling window throttler for node server",
   "main": "index.js",
   "homepage": "https://github.com/wix/rolling-window-throttler-js",
