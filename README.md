@@ -28,7 +28,7 @@ Parameters:
   - max - int, mandatory, number of allowed invocations for a key;
   - durationWindow - mandatory and can be one of:
     - ms, ex. {durationWindow: 1000};
-    - verbal period, ex {durationWindow: '1m' / '1s' / '1hr 20mins'} as per [parse-duration](https://www.npmjs.com/package/parse-duration).
+    - verbal period, ex. {durationWindow: '1m' / '1s' / '1hr 20mins'} as per [parse-duration](https://www.npmjs.com/package/parse-duration).
 
 ### RollingWindowThrottler.tryAcquire(key): boolean
 Returns true if not throttled for provided key.
