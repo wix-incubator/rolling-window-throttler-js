@@ -12,4 +12,4 @@ deploy:
     secure: d9kk8UF5yeq6cZNrgJl5A96ck55rY/6vIB2k1/H6WKd9fd4zBy+mx6MgMuPU00B1h2vn0dndRsJ5xPc08kz+nWWEXmNJzYUnbI7BkZTWju7UzW/mw6jtcakPfU3hEWzzM4nrxn6DfbSGOySJVCwWS9C0tujJWZc36jYllWM9fmI6+z7jOBCWI9R4oyfmUc/1Is1mzUiTaA0JGtjNnKZ1TTDaJxyJW/dQ9YKPy6XlRvKiGKLU6HGZqaigdnyAX7E8CpTf6x1Zys1eeCoX5TGAOg5VnppkuzkJtbvSKGRacVbklq7p/iQOT21d5O9U/wLz0B4CvnhV7punGHuwMq6s89FXD98gI432nL/geuo6jwWBYzof00OfV8n0OotrqcxRHQbXyZPcHRl4HhB8ItvCYEHyWYQp3206t0W7uCmkttZCOsZKxneQ1fFdnMetkzQcHI10YTt4SDXV5rGmJIBmvF5v7agPiZVMk8UHUM8lkTSJ7srK4eWsKaZHLGGcMrqRwQRwMgmmna6J0LKvLSLS0N/GpdUJ7IczvvZPwPxnrcJK7KEB/f89KhgREHZDu0CxUPPcp2G0/i6cpBP1iELcSYwHjFZPLPjpNatg1i+2u7PEDtk7SLKpcSvEZy9ayS2fM8lKkOq5Phhak+OkTXXQUdak6nyTeJ4DpTTgQx6VHmU=
   on:
     branch: master
-    node: '6' # so that only once build from matrix triggers release
+    node: '6' # so that only one build from matrix triggers release
