@@ -1,7 +1,7 @@
 'use strict';
 const parseDuration = require('parse-duration');
 
-module.exports.get = options => {
+module.exports = options => {
   const throttler = new RollingWindowThrottler(options);
   return {
     tryAcquire: key => throttler.tryAcquire(key)
@@ -14,7 +14,6 @@ class RollingWindowThrottler {
     this.durationWindow = RollingWindowThrottler.calculateDuration(options.durationWindow);
     this.invocations = {};
   }
-
 
   tryAcquire(key) {
     const invocation = this.getOrElseCreate(key);
@@ -31,11 +30,10 @@ class RollingWindowThrottler {
   }
 
   getOrElseCreate(key) {
-    return this.invocations[key]
-      || (this.invocations[key] = this.newInvocation(), this.invocations[key]);
+    return this.invocations[key] || (this.invocations[key] = RollingWindowThrottler.newInvocation());
   }
 
-  newInvocation() {
+  static newInvocation() {
     return {
       count: 0,
       timestamp: Date.now()

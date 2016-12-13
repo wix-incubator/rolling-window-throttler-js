@@ -11,7 +11,7 @@ npm install --save rolling-window-throttler
 
 ```js
 const rollingWindowThrottler = require('rolling-window-throttler')
-const throttler = rollingWindowThrottler.get({max: 1, durationWindow: '1s'})
+const throttler = rollingWindowThrottler({max: 1, durationWindow: '1s'})
 
 if (throttler.tryAcquire('some-key')) {
   // not throttled, perform logic
@@ -20,7 +20,7 @@ if (throttler.tryAcquire('some-key')) {
 
 ## Api
 
-### get({max, durationWindow}): RollingWindowThrottler
+### ({max, durationWindow}): RollingWindowThrottler
 Create new instance of `RollingWindowThrottler`.
 
 Parameters:

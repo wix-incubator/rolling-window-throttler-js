@@ -1,6 +1,6 @@
 'use strict';
 const expect = require('chai').expect,
-  factory = require('..'),
+  rollingWindowThrottler = require('..'),
   sinon = require('sinon');
 
 describe('rolling window throttler', () => {
@@ -38,7 +38,7 @@ describe('rolling window throttler', () => {
   }));
 
   function aThrottler(durationWindow) {
-    return factory.get({max: 1, durationWindow: durationWindow || 1000});
+    return rollingWindowThrottler({max: 1, durationWindow: durationWindow || 1000});
   }
 
 });
