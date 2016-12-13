@@ -4,7 +4,7 @@ node_js:
 - '6'
 - '7'
 before_deploy:
-  npm release
+  npm run release
 deploy:
   provider: npm
   email: kfirb@wix.com
