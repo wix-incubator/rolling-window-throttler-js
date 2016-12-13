@@ -18,7 +18,7 @@
   },
   "engines": {
     "node": ">=4"
-  }
+  },
   "dependencies": {
     "hashmap": "^2.0.6",
     "parse-duration": "^0.1.1"
