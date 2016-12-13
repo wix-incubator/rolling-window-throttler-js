@@ -4,7 +4,7 @@ node_js:
 - '6'
 - '7'
 before_deploy:
-  wnpm-release
+  npm release
 deploy:
   provider: npm
   email: kfirb@wix.com

@@ -7,7 +7,8 @@
   "author": "Kfir Bloch <kfirb@wix.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "release": "wnpm-release --no-shrinkwrap"
   },
   "repository": {
     "type": "git",
