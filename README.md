@@ -1,4 +1,4 @@
-# Rolling Window Throttler [![Build Status](https://img.shields.io/travis/wix/rolling-window-throttler-js/master.svg?label=build%20status)](https://travis-ci.org/wix/rolling-window-throttler-js) [![npm version](https://img.shields.io/npm/v/rolling-window-throttler.svg)](https://www.npmjs.com/package/rolling-window-throttler) [![Libraries.io for GitHub](https://img.shields.io/librariesio/github/wix/rolling-window-throttler-js.svg)](https://www.npmjs.com/package/rolling-window-throttler)
+# Rolling Window Throttler [![Build Status](https://img.shields.io/travis/wix/rolling-window-throttler-js/master.svg?label=build%20status)](https://travis-ci.org/wix/rolling-window-throttler-js) [![npm version](https://img.shields.io/npm/v/rolling-window-throttler.svg)](https://www.npmjs.com/package/rolling-window-throttler)
 Count invocation per key and returns boolean if invocation allowed within the rolling window for a given durationWindow and max invocations per key.
 
 ## Install
