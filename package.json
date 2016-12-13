@@ -7,7 +7,8 @@
   "author": "Kfir Bloch <kfirb@wix.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "wnpm-release"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "chai": "~3.5.0",
     "mocha": "~3.2.0",
-    "sinon": "~1.17.6"
+    "sinon": "~1.17.6",
+    "wnpm-ci": "~6.2.38"
   }
 }
