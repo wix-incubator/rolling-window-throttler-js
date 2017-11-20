@@ -25,7 +25,7 @@ class RollingWindowThrottler {
   }
 
   filterExpiredTries(key, now) {
-    const now = now || Date.now();
+    now = now || Date.now();
     this.invocations[key] = this.invocations[key].filter(invTime => now - invTime < this.durationWindow);
   }
 
