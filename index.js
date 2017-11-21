@@ -16,32 +16,19 @@ class RollingWindowThrottler {
   }
 
   tryAcquire(key) {
-    const invocation = this.getOrElseCreate(key);
-    RollingWindowThrottler.incrementInvocationCount(invocation);
-    if (this.isExpires(invocation)) {
-      delete this.invocations[key];
-      return this.tryAcquire(key);
+    this.invocations[key] = this.invocations[key] || [];
+    const now = Date.now();
+    this.filterExpiredTries(key, now);
+    const isBelowLimit = this.invocations[key].length < this.max;
+    if (isBelowLimit) {
+      this.invocations[key].push(now);
     }
-    return invocation.count <= this.max;
+    return isBelowLimit;
   }
 
-  isExpires(invocation) {
-    return ((Date.now() - invocation.timestamp) > this.durationWindow)
-  }
-
-  getOrElseCreate(key) {
-    return this.invocations[key] || (this.invocations[key] = RollingWindowThrottler.newInvocation());
-  }
-
-  static newInvocation() {
-    return {
-      count: 0,
-      timestamp: Date.now()
-    };
-  }
-
-  static incrementInvocationCount(invocation) {
-    invocation.count++;
+  filterExpiredTries(key, now) {
+    now = now || Date.now();
+    this.invocations[key] = this.invocations[key].filter(invTime => now - invTime < this.durationWindow);
   }
 
   static calculateDuration(durationWindow) {
