@@ -18,10 +18,12 @@ class RollingWindowThrottler {
   tryAcquire(key) {
     this.invocations[key] = this.invocations[key] || [];
     const now = Date.now();
-    this.invocations[key].push(now);
-
     this.filterExpiredTries(key, now);
-    return this.invocations[key].length <= this.max;
+    const isBelowLimit = this.invocations[key].length < this.max;
+    if (isBelowLimit) {
+      this.invocations[key].push(now);
+    }
+    return isBelowLimit;
   }
 
   filterExpiredTries(key, now) {
