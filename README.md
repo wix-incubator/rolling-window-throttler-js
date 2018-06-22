@@ -33,5 +33,8 @@ Parameters:
 ### RollingWindowThrottler.tryAcquire(key): boolean
 Returns true if not throttled for provided key.
 
+## Package version
+Note that package uses [wnpm-ci](https://www.npmjs.com/package/wnpm-ci) to publish package to [npmjs](https://www.npmjs.com). This just means that patch part of package version in git repo does not match that of published to [npmjs](https://www.npmjs.com).
+
 ## License
 Copyright (c) 2014 Wix.com Ltd. All Rights Reserved. Use of this source code is governed by a BSD-style license that can be found in the [LICENSE](LICENSE.md) file in the root of the source tree.
